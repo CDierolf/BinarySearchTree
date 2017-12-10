@@ -1,4 +1,5 @@
 #pragma once
+// Class implmentation file for the Binary Tree.
 #ifndef BINARYTREE_H
 #define BINARYTREE_H
 #include <vector>
@@ -26,8 +27,9 @@ private:
 	bool search(double, TreeNode *);
 	void inOrder(vector<double> & v, TreeNode *);
 public:
+	// Calls the private helper methods to perform operations.
 	BinaryTree() { root = NULL; }
-	void insert(double x) { insert(root, x); }
+	void insert(double x) { insert(root, x); }  
 	bool search(double x) { return search(x, root); }
 	void inOrder(vector <double> & v) { inOrder(v, root); }
 

@@ -1,10 +1,11 @@
+// Class Definition File for the Binary Tree.
 #include "BinaryTree.h"
 #include <vector>
 #include <iostream>
 
 using namespace std;
 
-
+// Performs a search on the tree.
 bool BinaryTree::search(double x, TreeNode *)
 {
 	TreeNode *tree = root;
@@ -19,7 +20,8 @@ bool BinaryTree::search(double x, TreeNode *)
 	}
 	return false;
 }
-
+// Inserts new values iteratively. Defines the private insert function but calls the public insert function
+// to insert the value into the tree based on its value.
 void BinaryTree::insert(TreeNode *& tree, double x)
 {
 	if (!tree)
@@ -32,16 +34,17 @@ void BinaryTree::insert(TreeNode *& tree, double x)
 	{
 		return;
 	}
-	if (x < tree->value)
+	if (x < tree->value) // number is less than the parent node, goes the the left.
 	{
 		insert(tree->left, x);
 	}
-	else
+	else	// number is greater than the parent node, goes to the right.
 	{ 
 		insert(tree->right, x);	
 	}
 
 }
+//Loads the values of the tree in-order into the vector.
 void BinaryTree::inOrder(vector<double> &v, TreeNode *tree)
 {
 	if (tree)
